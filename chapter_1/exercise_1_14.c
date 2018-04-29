@@ -5,9 +5,10 @@
 
 #include <stdio.h>
 
+#define NUM_LETTERS 26
+
 main()
 {
-    #define NUM_LETTERS 26
     int i, j, input;
     int uppercase_letter[NUM_LETTERS];
     int lowercase_letter[NUM_LETTERS];
