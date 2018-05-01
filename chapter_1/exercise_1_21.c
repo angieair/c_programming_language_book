@@ -18,7 +18,6 @@ void print_spaces(int count)
 main()
 {
 	char c;
-	int i;
 	int spaces_count = 0;
 	int characters_count = 0;
 
