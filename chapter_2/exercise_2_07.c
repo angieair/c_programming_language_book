@@ -7,15 +7,18 @@
 
 #include <stdio.h>
 
+#define set_bit(var,bit) (var |= (1<<bit))
+#define get_bit(var,bit) (var & (1<<bit))
+
 void print_binary(int value)
 {
-    while (value)
-    {
-        if (value & 1)
+    int num_of_bits = sizeof(value)*8;
+
+    for (int i = num_of_bits-1; i >= 0; i--) {
+        if (get_bit(value,i))
             printf("1");
         else
             printf("0");
-        value >>= 1;    
     }
 }
 
@@ -23,7 +26,7 @@ int invert(int x, int p, int n)
 {
     for (int i=0; i < n; i++)
     {
-        x ^= (1<<(p+i));
+        x ^= (1<<(p-i));
     }
     return x;
 }
@@ -31,8 +34,8 @@ int invert(int x, int p, int n)
 int main(void)
 {
     int x = 39;
-    int p = 2; // beginning position
-    int n = 2; // n bits
+    int p = 3; // beginning bit position
+    int n = 3; // n bits
     int result = invert(x,p,n);
     
     printf("Original : ");
