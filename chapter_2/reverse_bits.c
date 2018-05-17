@@ -26,7 +26,7 @@ void print_binary(unsigned int value)
 
 unsigned int reverse_bits(unsigned int value)
 {
-    unsigned int result;
+    unsigned int result = 0;
     int num_of_bits = sizeof(value)*8;
 
     for (int i = 0; i < num_of_bits; i++)
@@ -42,13 +42,10 @@ unsigned int reverse_bits(unsigned int value)
 int main(void)
 {
     unsigned int input = 43261596;
-
     print_binary(input);
 
     unsigned int result = reverse_bits(input);
-
     printf("\nResult : %d\n", result);
-
     print_binary(result);
 
     return 0;
