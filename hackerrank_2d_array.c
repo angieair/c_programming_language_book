@@ -16,14 +16,14 @@ int hourglassSum(int arr_rows, int arr_columns, int** arr) {
 
     int max_sum = INT_MIN;
     
-    for (int row = 0; row < arr_rows-2; row++) {
-        for (int col = 0; col < arr_columns-2; col++) {
-            
+    for (int row = 0; row < arr_rows-2; row++) 
+    {
+        for (int col = 0; col < arr_columns-2; col++) 
+        {            
             int sum = arr[row][col] + arr[row][col+1] + arr[row][col+2] + arr[row+1][col+1] + arr[row+2][col] + arr[row+2][col+1] + arr[row+2][col+2];
             
             if (sum > max_sum)
-                max_sum = sum;
-            
+                max_sum = sum;            
         }
     }
     return max_sum;
